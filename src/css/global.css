@@ -1,0 +1,23 @@
+@import url('./font.css');
+@import url('./variable.css');
+/* layout */
+@import url('./layout/header.css');
+@import url('./layout/footer.css');
+@import url('./main.css');
+@import url('./pages/state_property.css');
+@import url('./pages/management.css');
+@import url('./pages/static.css');
+@import url('./pages/static2.css');
+@import url('./pages/laws.css');
+@import url('./pages/photo.css');
+@import url('./pages/contact.css');
+@import url('./pages/municipal_lands.css');
+@import url('./pages/enforcement_service.css');
+@import url('./pages/all_lots.css');
+@import url('./pages/single_lots.css');
+@import url('./pages/news.css');
+@import url('./pages/single_news.css');
+@import url('./pages/announcements.css');
+@import url('./pages/articles_interviews.css');
+@import url('./pages/contact.css');
+@import url('./pages/map.css');

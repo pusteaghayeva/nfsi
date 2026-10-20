@@ -1,0 +1,85 @@
+.laws {
+    margin: 68px 0;
+}
+
+.laws-title {
+    color: var(--lawsColor);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.laws-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 20%;
+    height: 2px;
+    background-color: var(--lawsColor);
+}
+
+.laws-blog {
+    margin: 12px 0;
+    background-color: var(--lawBg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 28px 22px;
+    border-radius: 8px;
+    border-left: 5px solid var(--lawsColor);
+    border-top-left-radius: 10px;
+    transition: all .4s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.laws-blog:hover {
+    background-color: var(--lawHoverBg);
+    transform: scale(1.02);
+    border-left: 5px solid var(--lawsColor);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.laws-abs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.laws-blog:hover .laws-abs {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.laws-blog-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--announcementColor);
+
+}
+
+@media only screen and (max-width: 992px) {
+    .laws-blog {
+        margin: 20px 0;
+    }
+
+    .laws-title::after {
+        width: 100%;
+    }
+
+    .laws-blog-title {
+        font-size: 16px;
+    }
+
+
+}

@@ -1,0 +1,27 @@
+.management-blog {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    color: var(--navBg);
+    font-size: 22px;
+    margin-top: 32px;
+}
+
+.management-title-blog {
+    font-weight: 700;
+    letter-spacing: 0%;
+
+}
+
+.management-name {
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.management-hr {
+    border: 1px solid var(--lawsColor);
+    margin: 32px 0;
+}
+
+.management-blog:last-child .management-hr {
+    display: none;
+}

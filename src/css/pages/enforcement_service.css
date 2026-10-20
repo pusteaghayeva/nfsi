@@ -1,0 +1,9 @@
+.enforcement_service_title::after{
+    width: 24%;
+}
+
+@media only screen and (max-width: 992px) {
+    .enforcement_service_title::after{
+        width: 100%;
+    }
+}

@@ -1,0 +1,67 @@
+.municipal-select-menu {
+    background-color: #076BA9;
+    margin: 12px 0;
+    color: var(--whiteColor);
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 30px;
+}
+
+
+
+.form-select.municipal-select-menu:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: none;
+    background: #076BA9;
+    color: var(--whiteColor);
+}
+
+.municipal-select-menu option {
+    background-color: var(--whiteColor);
+    border: none;
+    color: #000;
+}
+
+.municipal-select-menu option {
+    background-color: var(--whiteColor);
+}
+
+.municipal_lands .active-lots .post-slide .post-img img {
+    width: 100%;
+    height: 150px;
+}
+
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('/src/img/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2rem;
+}
+
+.custom-select option {
+    background-color: var(--listColor);
+    color: var(--whiteColor);
+}
+
+select.custom-select option {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+.custom-select option {
+    background-color: #fff3e6;
+    color: #994d00;
+}

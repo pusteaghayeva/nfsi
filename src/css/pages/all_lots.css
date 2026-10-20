@@ -1,0 +1,86 @@
+.all_lots_search input {
+    height: 56px;
+    padding-left: 50px;
+}
+
+.all_lots_search input::placeholder {
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--allLotsSearch);
+
+}
+
+.all_lots_search form {
+    position: relative;
+    width: 50%;
+}
+
+.all_lots_search button {
+    position: absolute;
+    top: 20%;
+}
+
+.accordion .accordion-lots {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.active_lots_tabs {
+    margin: 32px 0;
+}
+
+.active_lots_tabs .nav-pills .nav-item {
+    margin: 0 16px;
+}
+
+
+
+.active_lots_tabs .nav-pills .nav-item .nav-link {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1E8FF280;
+    background: #DAEEFF8A;
+    margin: 10px auto;
+    color: var(--lawsColor);
+}
+
+.active_lots_tabs .nav-pills .nav-item .nav-link.active {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    height: 40px;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1E8FF280;
+    background-color: var(--lawsColor);
+    margin: 10px auto;
+    color: var(--whiteColor);
+}
+.all_lots_title::after{
+    width:12%;
+}
+
+
+@media only screen and (max-width: 992px) {
+    .all_lots_search form {
+        position: relative;
+        width: auto;
+    }
+}

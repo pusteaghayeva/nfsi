@@ -1,0 +1,320 @@
+:root {
+    --secondary-bg-color: #282828;
+    --primary-text-color: #191919;
+    --font-family: "Inter", sans-serif;
+    --font-size: 16px;
+    --line-height: 150%;
+    --accent-bg-color: #ef8c61;
+}
+
+body {
+    background: #fbfbfb;
+}
+
+.career_header {
+    position: relative;
+    padding: 80px 60px;
+    min-height: 490px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.career_header_text {
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.career_header_text h1,
+.vacancies h1 {
+    color: #1e1e1e;
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--line-height);
+    letter-spacing: -0.42px;
+}
+
+.vacancies h1 {
+    padding-bottom: 50px;
+    font-size: 34px;
+}
+
+.career_header_text p {
+    padding: 40px 0;
+    color: #696969;
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height);
+}
+
+.career_circle1,
+.career_circle2,
+.career_circle3,
+.career_circle4,
+.career_circle5 {
+    padding: 10px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f1b59b;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.career_circle1 {
+    top: 75px;
+    left: 350px;
+    width: 56px;
+    height: 56px;
+    animation: moveUpAndDown 4s ease infinite;
+}
+
+.career_circle2 {
+    top: unset;
+    left: 90px;
+    bottom: 120px;
+    width: 50px;
+    height: 50px;
+    animation: moveUpAndDown 4s ease infinite;
+}
+
+.career_circle3 {
+    top: 125px;
+    bottom: 0;
+    left: unset;
+    right: 330px;
+    width: 56px;
+    height: 56px;
+    animation: moveUpAndDown 4s ease infinite;
+}
+
+.career_circle4 {
+    top: 200px;
+    bottom: unset;
+    left: unset;
+    right: 92px;
+    width: 58px;
+    height: 58px;
+    animation: moveUpAndDown 4s ease infinite;
+}
+
+.career_circle5 {
+    top: unset;
+    bottom: -48px;
+    left: unset;
+    right: 477px;
+    width: 58px;
+    height: 58px;
+    animation: moveUpAndDown 4s ease infinite;
+}
+
+.career_circle img,
+.career_circle2 img,
+.career_circle3 img,
+.career_circle4 img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.laboratories {
+    padding: 0px 60px 120px;
+}
+
+.lab_rows {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.lab {
+    position: relative;
+    min-height: 340px;
+    padding: 30px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0px 0px 23px 0px rgba(212, 212, 212, 0.18);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.lab::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(
+        220deg,
+        #ffdbcb 0.15%,
+        #f6c0a9 43.65%,
+        #eba181 99.85%
+    );
+    transition: all 0.3s ease;
+}
+
+.lab_img {
+    height: 215px;
+    width: 100%;
+}
+
+.lab_img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.lab_name {
+    position: absolute;
+    top: 100%;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    padding: 104px 30px 24px;
+    transition: all 0.3s ease;
+    z-index: 2;
+    border-radius: 5px;
+}
+
+.lab h5 {
+    height: 60px;
+    color: #494949;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height);
+
+    z-index: 2;
+    position: absolute;
+    bottom: 30px;
+    padding-right: 30px;
+    transition: all 0.3s ease;
+}
+
+.lab_name p {
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--line-height);
+}
+
+.lab_name .line {
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    margin: 30px 0;
+}
+
+.lab_name .btn {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+
+    color: #fff;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--line-height);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: all 0.4s;
+
+    cursor: pointer;
+}
+
+.lab_name .btn:hover {
+    border: 1px solid #fff;
+}
+
+.lab:hover .lab_name {
+    top: 0;
+}
+
+.lab:hover h5 {
+    bottom: calc(100% - 20px);
+    transform: translateY(100%);
+
+    color: #fff;
+}
+
+.lab:hover::after {
+    opacity: 1;
+    z-index: 1;
+}
+
+@keyframes moveUpAndDown {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+}
+
+@media (max-width: 768px) {
+    .career_header {
+        padding: 80px 32px;
+    }
+
+    .laboratories {
+        padding: 0px 32px 120px;
+    }
+
+    .career_circle1,
+    .career_circle2,
+    .career_circle3,
+    .career_circle4,
+    .career_circle5 {
+        display: none;
+    }
+
+    .lab h5 {
+        z-index: 1;
+    }
+
+    .lab:hover::after {
+        z-index: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .career_header {
+        padding: 50px 20px 50px;
+    }
+
+    .career_header_text h1,
+    .vacancies h1 {
+        font-size: 32px;
+    }
+
+    .career_header_text p {
+        padding-bottom: 0;
+    }
+
+    .laboratories {
+        padding: 0px 20px 20px;
+    }
+}
