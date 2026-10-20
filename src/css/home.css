@@ -535,7 +535,7 @@ body {
 }
 
 .map_section {
-    padding: 60px 80px 60px 100px;
+    padding: 70px 80px 70px 100px;
     background: #f6f6f6;
     min-height: inherit;
 }
@@ -544,11 +544,11 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 60px;
+    gap: 50px;
 }
 
 .map_text {
-    width: 40%;
+    width: 38%;
 }
 
 .map_text p {
@@ -562,14 +562,14 @@ body {
 }
 
 .map_wrapper {
-    width: 60%;
-    max-width: 520px;
+    width: 62%;
+    max-width: 630px;
     margin: 0 auto;
     height: max-content;
 }
 
 .map_wrapper .jsmaps-wrapper {
-    max-width: 520px;
+    max-width: 630px;
     margin: 0 auto;
 }
 
