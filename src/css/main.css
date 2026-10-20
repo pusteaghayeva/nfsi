@@ -174,39 +174,44 @@ h2 {
 
 .dropdown-content {
     margin-top: 8px;
-    display: block;
+    display: none;
     position: absolute;
-    max-width: 120px;
+    top: 100%;
+    left: 0;
+    min-width: 90px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     background-color: white;
     border-radius: 5px;
-    height: 0;
     overflow: hidden;
-    transition: all 0.5s;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown-content a {
     color: var(--secondary-bg-color);
-    text-align: justify;
+    text-align: center;
     font-family: var(--font-family);
     font-size: var(--font-size);
     font-style: normal;
     font-weight: 500;
     line-height: var(--line-height);
-    padding: 12px 16px;
+    padding: 10px 16px;
     text-decoration: none;
     display: block;
-    transition: all 0.5s;
-}
-
-.dropdown:hover .dropdown-content {
-    /* height: 96px; */
+    transition: all 0.3s;
 }
 
 .dropdown-content a:hover {
     background-color: #f1f1f1;
-    border-radius: 5px;
+    color: var(--accent-bg-color);
+    border-radius: 0;
 }
 
 .connect {

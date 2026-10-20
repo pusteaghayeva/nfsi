@@ -21,6 +21,11 @@ body {
     overflow-x: hidden !important;
 }
 
+.home_logo_white {
+    filter: brightness(0) invert(1) !important;
+    -webkit-filter: brightness(0) invert(1) !important;
+}
+
 .statistics {
     padding: 120px 60px;
 }
@@ -530,7 +535,7 @@ body {
 }
 
 .map_section {
-    padding: 120px 120px 93px 170px;
+    padding: 60px 80px 60px 100px;
     background: #f6f6f6;
     min-height: inherit;
 }
@@ -538,7 +543,8 @@ body {
 .map_div {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    align-items: center;
+    gap: 60px;
 }
 
 .map_text {
@@ -556,8 +562,15 @@ body {
 }
 
 .map_wrapper {
-    width: 100%;
+    width: 60%;
+    max-width: 520px;
+    margin: 0 auto;
     height: max-content;
+}
+
+.map_wrapper .jsmaps-wrapper {
+    max-width: 520px;
+    margin: 0 auto;
 }
 
 .map {
@@ -1118,7 +1131,7 @@ body {
     }
 
     .map_section {
-        padding: 120px 20px 93px 50px;
+        padding: 50px 20px;
     }
 
     .tariffs {

@@ -16,44 +16,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initialLanguage() {
-    const selectedLanguage = document.getElementById("selectedLanguage");
-    const languageList = document.getElementById("languageList");
-    const languages = {
-        en: "EN",
-        ru: "RU",
-        az: "AZ",
-    };
+    const selectedLanguage = document.getElementById("selectedLanguage") || document.querySelector(".dropbtn");
+    if (!selectedLanguage) return;
 
-    let currentLanguage = "az";
-    if (languageList === null) return;
+    const dropdown = selectedLanguage.closest(".dropdown");
+    if (!dropdown) return;
 
-    function renderLanguageList() {
-        languageList.innerHTML = "";
-        Object.entries(languages).forEach(([code, lang]) => {
-            if (code !== currentLanguage) {
-                const link = document.createElement("a");
-                link.href = "#";
-                link.dataset.lang = code;
-                link.textContent = lang;
-                languageList.appendChild(link);
-            }
-        });
-    }
+    const dropdownContent = dropdown.querySelector(".dropdown-content");
+    if (!dropdownContent) return;
 
-    renderLanguageList();
+    // Toggle dropdown open/close on click
+    selectedLanguage.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        dropdownContent.classList.toggle("show");
+    });
 
-    languageList.addEventListener("click", (event) => {
-        if (event.target.tagName === "A") {
-            const chosenLanguage = event.target.dataset.lang;
-
-            const img = selectedLanguage.querySelector("img");
-
-            selectedLanguage.innerHTML = `${languages[chosenLanguage]} `;
-            selectedLanguage.appendChild(img);
-            currentLanguage = chosenLanguage;
-
-            renderLanguageList();
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!dropdown.contains(e.target)) {
+            dropdownContent.classList.remove("show");
         }
+    });
+
+    // Handle language item selection
+    dropdownContent.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            dropdownContent.classList.remove("show");
+        });
     });
 }
 
