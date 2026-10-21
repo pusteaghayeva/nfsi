@@ -33,7 +33,10 @@ function closeShowMore() {
   document.body.classList.remove("no_scroll");
 }
 
-document.getElementById("overlay").addEventListener("click", closeShowMore);
+const overlay = document.getElementById("overlay");
+if (overlay) {
+  overlay.addEventListener("click", closeShowMore);
+}
 document
   .querySelectorAll(".show_more_team_member .close")
   .forEach((closeBtn) => {

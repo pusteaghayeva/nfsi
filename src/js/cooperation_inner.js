@@ -1,46 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
     const mainImage = document.querySelector(".slide_show_main_image img");
-    const slideImages = document.querySelectorAll(".slide_show_image img");
+    const thumbnails = document.getElementById("newsThumbnails");
+    if (!mainImage || !thumbnails) return;
+
     let currentIndex = 0;
     let isPaused = false;
+    let pauseTimer;
+    const slideImages = () => [...thumbnails.querySelectorAll(".slide_show_image img")];
 
     const changeImage = (index) => {
-        if (index < 0 || index >= slideImages.length) return;
+        const images = slideImages();
+        if (index < 0 || index >= images.length) return;
 
+        currentIndex = index;
+        const { src, alt } = images[index];
         mainImage.classList.remove("active");
-
-        setTimeout(() => {
-            const { src, alt } = slideImages[index];
+        window.setTimeout(() => {
             mainImage.src = src;
             mainImage.alt = alt;
-
             mainImage.classList.add("active");
-        }, 500);
+        }, 180);
     };
 
-    const autoSlideShow = () => {
-        if (!isPaused && slideImages.length > 0) {
-            currentIndex = (currentIndex + 1) % slideImages.length;
-            changeImage(currentIndex);
-        }
-    };
+    thumbnails.addEventListener("click", (event) => {
+        const image = event.target.closest(".slide_show_image img");
+        if (!image) return;
 
-    slideImages.forEach((img, index) => {
-        img.addEventListener("click", () => {
-            isPaused = true;
-            currentIndex = index;
-            changeImage(currentIndex);
+        const index = slideImages().indexOf(image);
+        if (index === -1) return;
 
-            setTimeout(() => {
-                isPaused = false;
-            }, 3000);
-        });
+        isPaused = true;
+        window.clearTimeout(pauseTimer);
+        changeImage(index);
+        pauseTimer = window.setTimeout(() => { isPaused = false; }, 3000);
     });
 
-    if (slideImages.length > 0) {
-        setInterval(autoSlideShow, 5000);
-        changeImage(currentIndex);
-    } else {
-        console.warn("No images found for the slideshow.");
-    }
+    window.setInterval(() => {
+        const images = slideImages();
+        if (isPaused || images.length < 2) return;
+        changeImage((currentIndex + 1) % images.length);
+    }, 5000);
 });

@@ -72,6 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
     value1: document.getElementById("value1"),
   };
 
+  if (Object.values(sliders).some((slider) => !slider) || Object.values(h6Inputs).some((input) => !input)) {
+    return;
+  }
+
   Object.keys(sliders).forEach((key) => {
     const slider = sliders[key];
     const h6 = h6Inputs[`value${key.replace("slider", "")}`];

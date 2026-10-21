@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     initialMainSlider();
     initialCounter();
-    $(function () {
-        $("#az-map").JSMaps({
+    if (typeof $ === "function" && document.getElementById("az-map")) {
+        $(function () {
+            $("#az-map").JSMaps({
             map: "azerbaijan",
             reponsive: true,
             selectElement: false,
@@ -29,8 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 setDataForMapFrame(state.abbreviation);
             },
+            });
         });
-    });
+    }
     closeLabInfo();
     truncateTextOnHover();
     setEqualMinHeight(".tariff");
@@ -77,8 +79,12 @@ function setDataForMapFrame(abbreviation) {
 }
 
 function closeLabInfo() {
-    document.querySelector(".back").addEventListener("click", () => {
+    const backButton = document.querySelector(".back");
+    if (!backButton) return;
+
+    backButton.addEventListener("click", () => {
         const labWrapper = document.querySelector(".lab_info");
+        if (!labWrapper) return;
         labWrapper.style.zIndex = -1;
         labWrapper.style.opacity = 0;
     });
@@ -87,6 +93,8 @@ function closeLabInfo() {
 function initialMainSlider() {
     const contents = document.querySelectorAll(".main_content");
     const points = document.querySelectorAll(".point_line");
+    if (!contents.length || !points.length) return;
+
     let currentIndex = 0;
     let autoSlideInterval;
 

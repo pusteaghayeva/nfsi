@@ -136,9 +136,11 @@ function initializeFormSubmission() {
 
 const phoneInput = document.getElementById("phone");
 
-phoneInput.addEventListener("input", function () {
-    this.value = this.value.replace(/[^0-9+]/g, "");
-});
+if (phoneInput) {
+    phoneInput.addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9+]/g, "");
+    });
+}
 
 const applyButton = document.getElementById("apply-btn");
 const serviceModal = document.querySelector(".service_modal");
@@ -158,14 +160,18 @@ function closeModal() {
     overlay.classList.remove("open");
 }
 
-applyButton.addEventListener("click", openModal);
+if (applyButton && serviceModal && overlay && closeImg) {
+    applyButton.addEventListener("click", openModal);
+    overlay.addEventListener("click", closeModal);
+    closeImg.addEventListener("click", closeModal);
+}
 
-overlay.addEventListener("click", closeModal);
-closeImg.addEventListener("click", closeModal);
-
-document.getElementById("form").addEventListener("submit", function (event) {
-    event.preventDefault();
-});
+const serviceForm = document.getElementById("form");
+if (serviceForm) {
+    serviceForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+    });
+}
 
 //Input types
 document.addEventListener("input", function (event) {
@@ -188,9 +194,12 @@ document.addEventListener("input", function (event) {
     }
 });
 
-document.getElementById("tin_enterprise").addEventListener("input", function (e) {
-    this.value = this.value.replace(/\D/g, "");
-});
+const tinInput = document.getElementById("tin_enterprise");
+if (tinInput) {
+    tinInput.addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, "");
+    });
+}
 
 //Phone number
 document.addEventListener("DOMContentLoaded", () => {
