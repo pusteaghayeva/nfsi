@@ -42,7 +42,8 @@ const englishPages = [
     'entrepreneur-reception-days.html',
     'complaints.html',
     'contact.html',
-    'career.html'
+    'career.html',
+    'city-laboratory.html'
 ];
 
 console.log('Testing', englishPages.length, 'English-named HTML pages...');

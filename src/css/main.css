@@ -37,7 +37,7 @@
     font-family: "Inter";
     font-weight: 600;
     font-style: normal;
-    src: url("../fonts/Inter-Semibold.ttf") format("truetype");
+    src: url("../fonts/Inter-Semibold.ttf?v=2") format("truetype");
 }
 
 @font-face {

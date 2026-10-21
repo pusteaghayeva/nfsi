@@ -15,6 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
             displayAbbreviations: false,
             textPosition: "bottom",
             onStateClick: function (state) {
+                const mapInfoDiv = document.querySelector(
+                    `.map_info_content[data-abbreviation="${state.abbreviation}"]`
+                );
+
+                if (mapInfoDiv) {
+                    const link = mapInfoDiv.getAttribute("data-link");
+
+                    if (link) {
+                        window.location.href = link;
+                        return;
+                    }
+                }
                 setDataForMapFrame(state.abbreviation);
             },
         });
@@ -53,7 +65,7 @@ function setDataForMapFrame(abbreviation) {
             const newLink = document.createElement("a");
             newLink.textContent = linkEl.textContent;
             newLink.setAttribute("href", linkEl.getAttribute("href"));
-            newLink.setAttribute("target", "_blank");
+            newLink.setAttribute("target", linkEl.getAttribute("target") || "_self");
             linksContainer.appendChild(newLink);
         });
 

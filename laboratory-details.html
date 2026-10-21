@@ -21,6 +21,8 @@
         content="Tovuz Regional Sınaq Laboratoriyası">
     <title>NQTİ-     Tovuz Regional Sınaq Laboratoriyası
 </title>
+    <link rel="icon" href="src/img/logo.png" type="image/png" />
+    <link rel="shortcut icon" href="src/img/logo.png" type="image/png" />
     <link rel="stylesheet" href="src/css/reset.css" />
     <link rel="stylesheet" href="src/css/bootstrap.min.css" />
     <link rel="stylesheet" href="src/css/swiper-bundle.min.css" />
@@ -1580,6 +1582,39 @@
 <script src="src/js/wow.min.js"></script>
 <script src="src/js/main.js"></script>
     <script src="src/js/cooperation_inner.js"></script>
+    <script>
+      (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const lab = (urlParams.get("lab") || "").toLowerCase();
+        const h1 = document.querySelector(".cooperation_inner h1");
+        const breadcrumbLast = document.querySelector(".breadcrumb li:last-child a");
+        const textInfo = document.querySelector(".text_info");
+
+        if (lab === "babek") {
+          document.title = "NQTİ - Babək Sınaq Laboratoriyası";
+          if (h1) h1.textContent = "Babək Sınaq Laboratoriyası";
+          if (breadcrumbLast) breadcrumbLast.textContent = "Babək Sınaq Laboratoriyası";
+          if (textInfo) {
+            textInfo.innerHTML = `
+              <p>Naxçıvan Qida Təhlükəsizliyi İnstitutunun Babək rayonu üzrə sınaq laboratoriyası qida təhlükəsizliyi, bitki və heyvan mənşəli məhsulların ekspertizası və müayinəsini həyata keçirir.</p>
+              <p>Babək Sınaq Laboratoriyası qida və kənd təsərrüfatı məhsullarında keyfiyyət və təhlükəsizlik göstəricilərinin müəyyənləşdirilməsi, baytarlıq və fitosanitar nəzarət tədbirlərinin elmi əsaslarla icrası üzrə müasir avadanlıqlarla təchiz olunmuşdur.</p>
+              <p>Laboratoriyada fiziki-kimyəvi, mikrobioloji və toksikoloji sınaqlar aparılır, istehlakçıların sağlamlığının qorunması məqsədilə operativ və dəqiq nəticələr təmin edilir.</p>
+            `;
+          }
+        } else if (lab === "naxcivan" || !lab) {
+          document.title = "NQTİ - Naxçıvan Şəhər Baytarlıq Laboratoriyası";
+          if (h1) h1.textContent = "Naxçıvan Şəhər Baytarlıq Laboratoriyası";
+          if (breadcrumbLast) breadcrumbLast.textContent = "Naxçıvan Şəhər Baytarlıq Laboratoriyası";
+          if (textInfo) {
+            textInfo.innerHTML = `
+              <p>Naxçıvan Qida Təhlükəsizliyi İnstitutunun Naxçıvan şəhər Baytarlıq Laboratoriyası heyvan sağlamlığının qorunması, xəstəliklərin diaqnostikası və bioloji təhlükəsizlik istiqamətində müasir tələblərə cavab verən maddi-texniki baza ilə təchiz edilmişdir.</p>
+              <p>Laboratoriyada patomorfoloji, mikrobioloji, seroloji və molekulyar-genetik müayinələr həyata keçirilir. Ərazidə epizootik sabitliyin təmin olunması və yoluxucu xəstəliklərin qarşısının vaxtında alınması məqsədilə monitorinq və profilaktik sınaqlar aparılır.</p>
+              <p>Müasir diaqnostik avadanlıqlar və beynəlxalq standartlara cavab verən test metodikaları vasitəsilə qısa müddətdə yüksək dəqiqlikli nəticələr əldə edilir.</p>
+            `;
+          }
+        }
+      })();
+    </script>
 </body>
 
 </html>
